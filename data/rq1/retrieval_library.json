@@ -1,0 +1,269 @@
+{
+  "version": "rq1-library-v1",
+  "examples": [
+    {
+      "schema_version": "1.0",
+      "id": "lib-speed-magnitude-0-2",
+      "text": "Keep commanded linear speed at most 0.2 m/s in either direction.",
+      "expression": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.2,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": -0.2,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-forward-limit-0-2",
+      "text": "The signed commanded linear velocity must be below 0.2 m/s.",
+      "expression": {
+        "op": "compare",
+        "variable": "command.linear_speed",
+        "comparator": "lt",
+        "value": 0.2,
+        "unit": "m/s"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-school-no-reverse",
+      "text": "Never command reverse motion in school_zone.",
+      "expression": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "school_zone"
+            }
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-loading-keepout",
+      "text": "Never let the robot footprint enter or touch loading_area.",
+      "expression": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "loading_area"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-duration-0-5",
+      "text": "Each proposed action duration must be at most 0.5 seconds.",
+      "expression": {
+        "op": "compare",
+        "variable": "command.duration",
+        "comparator": "le",
+        "value": 0.5,
+        "unit": "s"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-corridor-keepout",
+      "text": "The robot must never touch or enter the corridor.",
+      "expression": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "corridor"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-turn-magnitude-0-6",
+      "text": "Keep the commanded angular speed magnitude at most 0.6 rad/s.",
+      "expression": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "le",
+            "value": 0.6,
+            "unit": "rad/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "ge",
+            "value": -0.6,
+            "unit": "rad/s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-loading-crawl",
+      "text": "In loading_area, keep commanded linear speed strictly below 0.05 m/s in either direction.",
+      "expression": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "loading_area"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "lt",
+                "value": 0.05,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "gt",
+                "value": -0.05,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-kitchen-and-no-reverse",
+      "text": "Avoid the kitchen and never command reverse motion.",
+      "expression": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-duration-window",
+      "text": "Commanded action duration must be at least 0.1 s and at most 2 s.",
+      "expression": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.duration",
+            "comparator": "ge",
+            "value": 0.1,
+            "unit": "s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.duration",
+            "comparator": "le",
+            "value": 2.0,
+            "unit": "s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-speed-window",
+      "text": "Keep the commanded linear speed between 0.0 and 0.4 m/s.",
+      "expression": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.4,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "id": "lib-dock-slow-turn",
+      "text": "Near the charging_dock, meaning while the footprint overlaps it, keep commanded angular speed at most 0.1 rad/s in magnitude.",
+      "expression": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "charging_dock"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "le",
+                "value": 0.1,
+                "unit": "rad/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "ge",
+                "value": -0.1,
+                "unit": "rad/s"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

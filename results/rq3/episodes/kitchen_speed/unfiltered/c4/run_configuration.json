@@ -1,0 +1,67 @@
+{
+  "experiment": {
+    "scenario": "config/turtlebot_house.json",
+    "region_status": "operator-defined kitchen TEST ZONE; not a verified semantic room label",
+    "start": [
+      -2.5,
+      -2.5,
+      0.0
+    ],
+    "goal": [
+      2.5,
+      -2.0
+    ],
+    "goal_tolerance": 0.3,
+    "step_seconds": 0.1,
+    "plan_steps": 5,
+    "linear_limits": [
+      0.0,
+      0.5
+    ],
+    "angular_limits": [
+      -0.5,
+      0.5
+    ],
+    "episode_seconds": 180.0,
+    "robot_entity": "waffle_pi",
+    "backend": "safellmra_body_frame_experimental",
+    "position_uncertainty": 0.02,
+    "per_step_inflation": 0.005,
+    "braking_deceleration_assumption": 0.5,
+    "formal_guarantee": false
+  },
+  "scene": {
+    "world_source": "/home/meziz/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/worlds/turtlebot3_house.world",
+    "world_source_sha256": "664db0007913b5773d2528feb750ab2edfc9c030aa64ed6b5fcc55e469318312",
+    "robot_source": "/home/meziz/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo/models/turtlebot3_waffle_pi/model.sdf",
+    "robot_source_sha256": "96d681cbde7d46b75ffd75cc11a47e500416574dbeb3e8685f000bce1838f1ee",
+    "region_status": "operator-defined kitchen TEST ZONE; not a verified semantic room label",
+    "contact_topics": [
+      "/guardrailgen/contacts_base_link",
+      "/guardrailgen/contacts_base_scan",
+      "/guardrailgen/contacts_wheel_left_link",
+      "/guardrailgen/contacts_wheel_right_link",
+      "/guardrailgen/contacts_caster_back_right_link",
+      "/guardrailgen/contacts_caster_back_left_link"
+    ],
+    "ground_truth_topic": "/gazebo/model_states",
+    "odometry_world_alignment": "must be checked during stationary activation",
+    "footprint_radius": 0.25,
+    "step_seconds": 0.1,
+    "formal_guarantee": false
+  },
+  "controller": "goal-seeking",
+  "condition": "unfiltered",
+  "scenario_rule": "kitchen_speed",
+  "config_id": "c4",
+  "rule_enforced": false,
+  "filter_active": false,
+  "guidance_sides": "top",
+  "navigation_mode": "waypoint_guidance",
+  "rule_source": "reference",
+  "rule_artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/episodes/kitchen_speed/unfiltered/c4/rules/d6f9928bd842504c15e6204d823a6a35333f74b1edd797616dcb1a286c713a10.json",
+  "formal_guarantee": false,
+  "controller_input": "pose, heading, goal, LiDAR, executed input; no operator rule",
+  "reference_scope": "Gazebo model-state samples with linear interpolation; independently coded geometry",
+  "false_restriction_scope": "nominal rule-only replay; not a Gazebo counterfactual or backup oracle"
+}

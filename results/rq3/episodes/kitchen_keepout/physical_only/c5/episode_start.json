@@ -1,0 +1,18 @@
+{
+  "episode_version": 1,
+  "status": "active_development",
+  "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/episodes/kitchen_keepout/physical_only/c5/rules/4134842901710be86536241aabdbdbd0f1a5afebd3f0ef1eacd7c86f7e226c61.json",
+  "stl": "(not (region_kitchen >= 0))",
+  "activated_at": 2284.5,
+  "pose": [
+    2.4999387436570677,
+    -2.2000002069964006,
+    -3.14157942618602
+  ],
+  "measured_velocity": [
+    4.848403570484119e-05,
+    -1.529694544822588e-05
+  ],
+  "formal_guarantee": false,
+  "backup": "uncertified_nominal_braking_suffix"
+}

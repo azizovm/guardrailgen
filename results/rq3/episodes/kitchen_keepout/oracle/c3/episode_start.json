@@ -1,0 +1,18 @@
+{
+  "episode_version": 1,
+  "status": "active_development",
+  "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/episodes/kitchen_keepout/oracle/c3/rules/4134842901710be86536241aabdbdbd0f1a5afebd3f0ef1eacd7c86f7e226c61.json",
+  "stl": "(not (region_kitchen >= 0))",
+  "activated_at": 1685.1000000000001,
+  "pose": [
+    -2.999938740830995,
+    -2.199999881933359,
+    1.5943016739742557e-05
+  ],
+  "measured_velocity": [
+    2.1163066917450724e-05,
+    -1.5071469779649757e-05
+  ],
+  "formal_guarantee": false,
+  "backup": "uncertified_nominal_braking_suffix"
+}

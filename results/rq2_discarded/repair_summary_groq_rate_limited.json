@@ -1,0 +1,13 @@
+{
+  "injected": 40,
+  "repaired_to_reference": 2,
+  "repair_rate": 0.05,
+  "safe_outcome_rate": 1.0,
+  "accepted_but_wrong": 0,
+  "mean_repairs_when_repaired": 1,
+  "by_final_status": {
+    "backend_error": 38,
+    "compiled": 2
+  },
+  "model_calls": 2
+}

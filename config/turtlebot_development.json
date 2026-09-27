@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "frame": "odom",
+  "footprint_radius": 0.12,
+  "regions": {
+    "loading_area": {"kind": "rectangle", "xmin": 1.0, "xmax": 2.0, "ymin": -0.5, "ymax": 0.5},
+    "school_zone": {"kind": "rectangle", "xmin": 3.0, "xmax": 4.0, "ymin": -1.0, "ymax": 1.0}
+  },
+  "supported_variables": ["state.x", "state.y", "state.heading", "command.linear_speed", "command.angular_speed", "command.duration"]
+}

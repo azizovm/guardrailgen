@@ -1,0 +1,12 @@
+# Legacy, manually authored rules for explicit heuristic development only.
+# This YAML does not compile its English metadata with a language model.
+rules:
+  - name: keep_out_box
+    nl: "Keep the robot footprint outside the closed circle centered at (1.5, 0.0) with radius 0.5 m."
+    type: keep_out_circle
+    params: {cx: 1.5, cy: 0.0, radius: 0.5}
+
+  - name: command_speed_limit
+    nl: "Keep the absolute commanded linear speed at or below 0.22 m/s."
+    type: command_speed_limit
+    params: {v_max: 0.22}

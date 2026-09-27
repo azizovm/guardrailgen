@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "id": "command-speed-candidate",
+  "text": "Keep the magnitude of the commanded linear speed at or below 0.2 m/s.",
+  "expression": {
+    "op": "not",
+    "arg": {
+      "op": "or",
+      "args": [
+        {"op": "compare", "variable": "command.linear_speed", "comparator": "lt", "value": -0.2, "unit": "m/s"},
+        {"op": "compare", "variable": "command.linear_speed", "comparator": "gt", "value": 0.2, "unit": "m/s"}
+      ]
+    }
+  }
+}

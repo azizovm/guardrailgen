@@ -1,0 +1,5 @@
+# Tested in Ubuntu 22.04 / Python 3.10.12. RTAMT's ANTLR runtime is not Python 3.14 compatible.
+PyYAML==6.0.3
+pytest==9.1.1
+rtamt==0.3.5
+antlr4-python3-runtime==4.7

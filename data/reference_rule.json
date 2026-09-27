@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "id": "avoid-loading-area",
+  "text": "Never enter the loading area, and keep the magnitude of the commanded linear speed at or below 0.2 m/s.",
+  "expression": {
+    "op": "and",
+    "args": [
+      {"op": "not", "arg": {"op": "inside", "region": "loading_area"}},
+      {"op": "compare", "variable": "command.linear_speed", "comparator": "le", "value": 0.2, "unit": "m/s"},
+      {"op": "compare", "variable": "command.linear_speed", "comparator": "ge", "value": -0.2, "unit": "m/s"}
+    ]
+  }
+}

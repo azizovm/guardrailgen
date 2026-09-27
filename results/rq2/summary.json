@@ -1,0 +1,569 @@
+{
+  "mutants_generated": 269,
+  "equivalent_mutants_excluded": 0,
+  "undetermined_excluded": 0,
+  "real_faults": 269,
+  "structural_faults": 75,
+  "semantic_faults": 194,
+  "overall": {
+    "faults": 269,
+    "per_layer": {
+      "structural": 0.2788,
+      "validator": 0.3123,
+      "random20": 0.7844,
+      "boundary": 1.0,
+      "solver": 1.0
+    },
+    "pipelines": {
+      "always_on": {
+        "detection_rate": 0.3123,
+        "false_acceptance": 185
+      },
+      "always_on+random20": {
+        "detection_rate": 0.7844,
+        "false_acceptance": 58
+      },
+      "always_on+boundary": {
+        "detection_rate": 1.0,
+        "false_acceptance": 0
+      },
+      "always_on+boundary+solver": {
+        "detection_rate": 1.0,
+        "false_acceptance": 0
+      }
+    }
+  },
+  "semantic_only": {
+    "faults": 194,
+    "per_layer": {
+      "structural": 0.0,
+      "validator": 0.0464,
+      "random20": 0.701,
+      "boundary": 1.0,
+      "solver": 1.0
+    },
+    "pipelines": {
+      "always_on": {
+        "detection_rate": 0.0464,
+        "false_acceptance": 185
+      },
+      "always_on+random20": {
+        "detection_rate": 0.701,
+        "false_acceptance": 58
+      },
+      "always_on+boundary": {
+        "detection_rate": 1.0,
+        "false_acceptance": 0
+      },
+      "always_on+boundary+solver": {
+        "detection_rate": 1.0,
+        "false_acceptance": 0
+      }
+    }
+  },
+  "by_operator": {
+    "and_or_swap": {
+      "faults": 18,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.9444,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 18
+        },
+        "always_on+random20": {
+          "detection_rate": 0.9444,
+          "false_acceptance": 1
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "contradiction": {
+      "faults": 6,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 1.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "drop_condition": {
+      "faults": 5,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 5
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "drop_conjunct": {
+      "faults": 27,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.7037,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 27
+        },
+        "always_on+random20": {
+          "detection_rate": 0.7037,
+          "false_acceptance": 8
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "drop_negation": {
+      "faults": 11,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 11
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "flip_direction": {
+      "faults": 24,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.8333,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 24
+        },
+        "always_on+random20": {
+          "detection_rate": 0.8333,
+          "false_acceptance": 4
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "sign_flip": {
+      "faults": 21,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.1429,
+        "random20": 0.619,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.1429,
+          "false_acceptance": 18
+        },
+        "always_on+random20": {
+          "detection_rate": 0.619,
+          "false_acceptance": 8
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "strictness": {
+      "faults": 24,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 24
+        },
+        "always_on+random20": {
+          "detection_rate": 0.0,
+          "false_acceptance": 24
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "swap_region": {
+      "faults": 11,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.7273,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 11
+        },
+        "always_on+random20": {
+          "detection_rate": 0.7273,
+          "false_acceptance": 3
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "temporal_operator": {
+      "faults": 16,
+      "per_layer": {
+        "structural": 1.0,
+        "validator": 1.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "threshold_x10": {
+      "faults": 24,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.75,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 24
+        },
+        "always_on+random20": {
+          "detection_rate": 0.75,
+          "false_acceptance": 6
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "unit_error": {
+      "faults": 24,
+      "per_layer": {
+        "structural": 1.0,
+        "validator": 1.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "unknown_region": {
+      "faults": 11,
+      "per_layer": {
+        "structural": 1.0,
+        "validator": 1.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "unknown_variable": {
+      "faults": 24,
+      "per_layer": {
+        "structural": 1.0,
+        "validator": 1.0,
+        "random20": 1.0,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+random20": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    },
+    "wrong_variable": {
+      "faults": 23,
+      "per_layer": {
+        "structural": 0.0,
+        "validator": 0.0,
+        "random20": 0.8261,
+        "boundary": 1.0,
+        "solver": 1.0
+      },
+      "pipelines": {
+        "always_on": {
+          "detection_rate": 0.0,
+          "false_acceptance": 23
+        },
+        "always_on+random20": {
+          "detection_rate": 0.8261,
+          "false_acceptance": 4
+        },
+        "always_on+boundary": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        },
+        "always_on+boundary+solver": {
+          "detection_rate": 1.0,
+          "false_acceptance": 0
+        }
+      }
+    }
+  },
+  "reference_false_rejections": 0,
+  "reference_checks": [
+    {
+      "family": "f01-kitchen-keepout",
+      "rejected_by": [],
+      "boundary_bank_size": 20
+    },
+    {
+      "family": "f02-dock-keepout",
+      "rejected_by": [],
+      "boundary_bank_size": 20
+    },
+    {
+      "family": "f03-two-keepouts",
+      "rejected_by": [],
+      "boundary_bank_size": 20
+    },
+    {
+      "family": "f04-speed-mag-0-3",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f05-forward-strict-0-25",
+      "rejected_by": [],
+      "boundary_bank_size": 140
+    },
+    {
+      "family": "f06-turn-mag-0-4",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f07-no-reverse",
+      "rejected_by": [],
+      "boundary_bank_size": 100
+    },
+    {
+      "family": "f08-duration-1",
+      "rejected_by": [],
+      "boundary_bank_size": 100
+    },
+    {
+      "family": "f09-units-cm",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f10-school-speed",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f11-corridor-turn",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f12-corridor-no-reverse",
+      "rejected_by": [],
+      "boundary_bank_size": 100
+    },
+    {
+      "family": "f13-kitchen-speed",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f14-loading-and-speed",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f15-dock-and-school",
+      "rejected_by": [],
+      "boundary_bank_size": 180
+    },
+    {
+      "family": "f16-speed-and-turn-window",
+      "rejected_by": [],
+      "boundary_bank_size": 1620
+    }
+  ]
+}

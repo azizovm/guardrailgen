@@ -1,0 +1,3 @@
+{
+  "command.linear_speed": {"min": -0.5, "max": 0.5, "unit": "m/s"}
+}

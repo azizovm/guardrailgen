@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "frame": "map",
+  "footprint_radius": 0.25,
+  "regions": {
+    "kitchen": {
+      "kind": "rectangle",
+      "xmin": -0.8,
+      "xmax": 0.8,
+      "ymin": -3.4,
+      "ymax": -1.6
+    },
+    "loading_area": {
+      "kind": "rectangle",
+      "xmin": 2.0,
+      "xmax": 3.0,
+      "ymin": 1.0,
+      "ymax": 2.0
+    },
+    "school_zone": {
+      "kind": "rectangle",
+      "xmin": -3.5,
+      "xmax": -2.0,
+      "ymin": 1.0,
+      "ymax": 3.0
+    },
+    "corridor": {
+      "kind": "rectangle",
+      "xmin": -1.0,
+      "xmax": 1.0,
+      "ymin": 0.5,
+      "ymax": 3.5
+    },
+    "charging_dock": {
+      "kind": "circle",
+      "cx": 3.0,
+      "cy": -2.5,
+      "radius": 0.4
+    }
+  },
+  "supported_variables": [
+    "state.x",
+    "state.y",
+    "state.heading",
+    "command.linear_speed",
+    "command.angular_speed",
+    "command.duration"
+  ]
+}

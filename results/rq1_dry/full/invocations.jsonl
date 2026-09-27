@@ -1,0 +1,1 @@
+{"config": "full", "model": "openai/gpt-oss-120b", "dry_run": true, "calls_used_this_invocation": 0, "tokens_this_invocation": 0, "elapsed_s": 1.2, "corpus_version": "rq1-v1", "library_version": "rq1-library-v1"}

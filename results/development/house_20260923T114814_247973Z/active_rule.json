@@ -1,0 +1,13 @@
+{
+  "episode_version": 1,
+  "status": "active_development",
+  "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/compilation_20260923T114901_448671Z/rules/88be90566b6faea2fea4f1cd7d2e43ccf9898739d3103abc094f3219055df2fc.json",
+  "stl": "(not (region_kitchen >= 0))",
+  "activated_at": 78.10000000000001,
+  "pose": [
+    -2.9999406676210807,
+    -2.499999387315981,
+    9.86679638751523e-05
+  ],
+  "formal_guarantee": false
+}

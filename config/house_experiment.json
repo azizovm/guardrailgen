@@ -1,0 +1,18 @@
+{
+  "scenario": "config/turtlebot_house.json",
+  "region_status": "operator-defined kitchen TEST ZONE; not a verified semantic room label",
+  "start": [-3.0, -2.5, 0.0],
+  "goal": [3.0, -2.5],
+  "goal_tolerance": 0.3,
+  "step_seconds": 0.1,
+  "plan_steps": 5,
+  "linear_limits": [0.0, 0.5],
+  "angular_limits": [-0.5, 0.5],
+  "episode_seconds": 180,
+  "robot_entity": "waffle_pi",
+  "backend": "heuristic_development",
+  "position_uncertainty": 0.02,
+  "per_step_inflation": 0.005,
+  "braking_deceleration_assumption": 0.5,
+  "formal_guarantee": false
+}

@@ -1,0 +1,150 @@
+{
+  "kitchen_keepout": {
+    "unfiltered": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 5,
+      "violation_samples": 1036,
+      "measured_speed_violation_samples": null,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.0,
+      "rule_interventions": 0,
+      "false_restriction_rate_nominal_pooled": 0.0,
+      "mean_time_to_goal_s": 20.48,
+      "mean_path_length_m": 5.4751,
+      "max_filter_latency_ms": 0,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "physical_only": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 5,
+      "violation_samples": 1036,
+      "measured_speed_violation_samples": null,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.0,
+      "rule_interventions": 0,
+      "false_restriction_rate_nominal_pooled": 0.0,
+      "mean_time_to_goal_s": 20.56,
+      "mean_path_length_m": 5.4731,
+      "max_filter_latency_ms": 178.95462299929932,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "guardrailgen": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 0,
+      "violation_samples": 0,
+      "measured_speed_violation_samples": null,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.1788,
+      "rule_interventions": 297,
+      "false_restriction_rate_nominal_pooled": 0.1692,
+      "mean_time_to_goal_s": 35.86,
+      "mean_path_length_m": 7.125,
+      "max_filter_latency_ms": 234.14943200077687,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "oracle": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 0,
+      "violation_samples": 0,
+      "measured_speed_violation_samples": null,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.1887,
+      "rule_interventions": 321,
+      "false_restriction_rate_nominal_pooled": 0.1766,
+      "mean_time_to_goal_s": 36.56,
+      "mean_path_length_m": 7.1482,
+      "max_filter_latency_ms": 168.4209169998212,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    }
+  },
+  "kitchen_speed": {
+    "unfiltered": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 5,
+      "violation_samples": 1035,
+      "measured_speed_violation_samples": 1035,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.0,
+      "rule_interventions": 0,
+      "false_restriction_rate_nominal_pooled": 0.0,
+      "mean_time_to_goal_s": 20.56,
+      "mean_path_length_m": 5.4751,
+      "max_filter_latency_ms": 0,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "physical_only": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 5,
+      "violation_samples": 1036,
+      "measured_speed_violation_samples": 1036,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.0,
+      "rule_interventions": 0,
+      "false_restriction_rate_nominal_pooled": 0.0,
+      "mean_time_to_goal_s": 20.44,
+      "mean_path_length_m": 5.4711,
+      "max_filter_latency_ms": 220.38332499869284,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "guardrailgen": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 0,
+      "violation_samples": 0,
+      "measured_speed_violation_samples": 0,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.1463,
+      "rule_interventions": 244,
+      "false_restriction_rate_nominal_pooled": 0.0111,
+      "mean_time_to_goal_s": 35.34,
+      "mean_path_length_m": 5.4743,
+      "max_filter_latency_ms": 109.46893299842486,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    },
+    "oracle": {
+      "episodes": 5,
+      "goal_reached": 5,
+      "episodes_with_violation": 0,
+      "violation_samples": 0,
+      "measured_speed_violation_samples": 0,
+      "collision_events": 0,
+      "collision_measurement_complete": true,
+      "intervention_rate_pooled": 0.1436,
+      "rule_interventions": 240,
+      "false_restriction_rate_nominal_pooled": 0.0111,
+      "mean_time_to_goal_s": 35.46,
+      "mean_path_length_m": 5.4714,
+      "max_filter_latency_ms": 165.76384300060454,
+      "end_reasons": {
+        "goal_reached": 5
+      }
+    }
+  }
+}

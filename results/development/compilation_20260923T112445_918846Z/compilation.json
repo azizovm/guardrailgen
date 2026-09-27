@@ -1,0 +1,341 @@
+{
+  "status": "compiled",
+  "message": "Rule compiled successfully.",
+  "artifact": {
+    "schema_version": "1.0",
+    "rule": {
+      "schema_version": "1.0",
+      "id": "never-enter-kitchen",
+      "text": "Never enter the kitchen.",
+      "expression": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "kitchen"
+        }
+      }
+    },
+    "scenario": {
+      "schema_version": "1.0",
+      "frame": "odom",
+      "footprint_radius": 0.25,
+      "regions": {
+        "kitchen": {
+          "kind": "rectangle",
+          "xmin": -0.8,
+          "xmax": 0.8,
+          "ymin": -3.4,
+          "ymax": -1.6
+        }
+      },
+      "supported_variables": [
+        "state.x",
+        "state.y",
+        "state.heading",
+        "command.linear_speed",
+        "command.angular_speed",
+        "command.duration"
+      ]
+    },
+    "stl": "(not (region_kitchen >= 0))",
+    "provenance": {
+      "compiler_version": "1.0",
+      "prompt_version": "invariant-compiler-v1",
+      "prompt_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+      "response_schema_sha256": "cd89531eb46ad9007a8cfd91c3b9daad7c0b3a5fba255988e369c605f0d52cad",
+      "scenario_sha256": "71f11d89da840e6b95e5c572e66c669394348b102c89c4979fc8eb904b813483",
+      "example_set_version": "invariants-seed-v1",
+      "example_set_sha256": "dcd7a2e9cb9005cc95a25074da15ee64726ac77ff2762787dcde5617e53e983f",
+      "retrieval": "lexical-jaccard-v1",
+      "retrieved_ids": [
+        "command-forward-limit",
+        "command-duration",
+        "command-speed-magnitude"
+      ],
+      "backend": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-120b",
+        "adapter_version": "1.0",
+        "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+        "structured_output": "json_schema",
+        "strict": true,
+        "max_completion_tokens": 4096,
+        "timeout_seconds": 20.0,
+        "stream": false,
+        "sampling_parameters": "provider defaults",
+        "transport": "openai-0.28-compatible-sdk",
+        "reasoning_effort": "provider default"
+      },
+      "max_repairs": 2
+    },
+    "validation": {
+      "structure": "passed",
+      "grounding": "passed",
+      "lowering": "passed",
+      "english_semantics_verified": false,
+      "rtamt": "not_checked",
+      "trace_validation": "not_checked",
+      "equivalence": "not_checked",
+      "errors": [],
+      "additional_validation": {
+        "structure": "passed",
+        "grounding": "passed",
+        "lowering": "passed",
+        "consistency": "direct_conjuncts_checked_only",
+        "rtamt": {
+          "status": "passed",
+          "version": "0.3.5",
+          "scope": "instantaneous predicate syntax; enforce at every step"
+        },
+        "trace_validation": {
+          "cases": [
+            {
+              "index": 0,
+              "expected": "SAFE",
+              "actual": "SAFE",
+              "passed": true,
+              "rtamt_robustness": 0.19999999999999996
+            },
+            {
+              "index": 1,
+              "expected": "UNSAFE",
+              "actual": "UNSAFE",
+              "passed": true,
+              "rtamt_robustness": -0.050000000000000044
+            },
+            {
+              "index": 2,
+              "expected": "UNSAFE",
+              "actual": "UNSAFE",
+              "passed": true,
+              "rtamt_robustness": -1.05
+            },
+            {
+              "index": 3,
+              "expected": "SAFE",
+              "actual": "SAFE",
+              "passed": true,
+              "rtamt_robustness": 0.19999999999999996
+            }
+          ],
+          "passed": true,
+          "scope": "finite supplied reference cases; not a proof"
+        },
+        "english_semantics_verified": false,
+        "equivalence": "not_checked",
+        "errors": []
+      }
+    },
+    "compilation_attempts": [
+      {
+        "attempt": 1,
+        "metadata": {
+          "response_id": "chatcmpl-364c2c08-15d8-4300-b440-88b46077ba61",
+          "model": "openai/gpt-oss-120b",
+          "usage": {
+            "queue_time": 0.231991239,
+            "prompt_tokens": 3950,
+            "prompt_time": 0.177916371,
+            "completion_tokens": 345,
+            "completion_time": 0.723937149,
+            "total_tokens": 4295,
+            "total_time": 0.90185352,
+            "completion_tokens_details": {
+              "reasoning_tokens": 279
+            }
+          },
+          "system_fingerprint": "fp_3166198c1d",
+          "finish_reason": "stop"
+        },
+        "request_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+        "candidate": {
+          "status": "compiled",
+          "message": "Rule compiled successfully.",
+          "rule": {
+            "schema_version": "1.0",
+            "id": "never-enter-kitchen",
+            "text": "Never enter the kitchen.",
+            "expression": {
+              "op": "not",
+              "arg": {
+                "op": "inside",
+                "region": "kitchen"
+              }
+            }
+          }
+        },
+        "errors": [],
+        "validation": {
+          "structure": "passed",
+          "grounding": "passed",
+          "lowering": "passed",
+          "consistency": "direct_conjuncts_checked_only",
+          "rtamt": {
+            "status": "passed",
+            "version": "0.3.5",
+            "scope": "instantaneous predicate syntax; enforce at every step"
+          },
+          "trace_validation": {
+            "cases": [
+              {
+                "index": 0,
+                "expected": "SAFE",
+                "actual": "SAFE",
+                "passed": true,
+                "rtamt_robustness": 0.19999999999999996
+              },
+              {
+                "index": 1,
+                "expected": "UNSAFE",
+                "actual": "UNSAFE",
+                "passed": true,
+                "rtamt_robustness": -0.050000000000000044
+              },
+              {
+                "index": 2,
+                "expected": "UNSAFE",
+                "actual": "UNSAFE",
+                "passed": true,
+                "rtamt_robustness": -1.05
+              },
+              {
+                "index": 3,
+                "expected": "SAFE",
+                "actual": "SAFE",
+                "passed": true,
+                "rtamt_robustness": 0.19999999999999996
+              }
+            ],
+            "passed": true,
+            "scope": "finite supplied reference cases; not a proof"
+          },
+          "english_semantics_verified": false,
+          "equivalence": "not_checked",
+          "errors": []
+        },
+        "status": "compiled"
+      }
+    ],
+    "activation": "requires_explicit_runtime_loading"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "metadata": {
+        "response_id": "chatcmpl-364c2c08-15d8-4300-b440-88b46077ba61",
+        "model": "openai/gpt-oss-120b",
+        "usage": {
+          "queue_time": 0.231991239,
+          "prompt_tokens": 3950,
+          "prompt_time": 0.177916371,
+          "completion_tokens": 345,
+          "completion_time": 0.723937149,
+          "total_tokens": 4295,
+          "total_time": 0.90185352,
+          "completion_tokens_details": {
+            "reasoning_tokens": 279
+          }
+        },
+        "system_fingerprint": "fp_3166198c1d",
+        "finish_reason": "stop"
+      },
+      "request_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+      "candidate": {
+        "status": "compiled",
+        "message": "Rule compiled successfully.",
+        "rule": {
+          "schema_version": "1.0",
+          "id": "never-enter-kitchen",
+          "text": "Never enter the kitchen.",
+          "expression": {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          }
+        }
+      },
+      "errors": [],
+      "validation": {
+        "structure": "passed",
+        "grounding": "passed",
+        "lowering": "passed",
+        "consistency": "direct_conjuncts_checked_only",
+        "rtamt": {
+          "status": "passed",
+          "version": "0.3.5",
+          "scope": "instantaneous predicate syntax; enforce at every step"
+        },
+        "trace_validation": {
+          "cases": [
+            {
+              "index": 0,
+              "expected": "SAFE",
+              "actual": "SAFE",
+              "passed": true,
+              "rtamt_robustness": 0.19999999999999996
+            },
+            {
+              "index": 1,
+              "expected": "UNSAFE",
+              "actual": "UNSAFE",
+              "passed": true,
+              "rtamt_robustness": -0.050000000000000044
+            },
+            {
+              "index": 2,
+              "expected": "UNSAFE",
+              "actual": "UNSAFE",
+              "passed": true,
+              "rtamt_robustness": -1.05
+            },
+            {
+              "index": 3,
+              "expected": "SAFE",
+              "actual": "SAFE",
+              "passed": true,
+              "rtamt_robustness": 0.19999999999999996
+            }
+          ],
+          "passed": true,
+          "scope": "finite supplied reference cases; not a proof"
+        },
+        "english_semantics_verified": false,
+        "equivalence": "not_checked",
+        "errors": []
+      },
+      "status": "compiled"
+    }
+  ],
+  "provenance": {
+    "compiler_version": "1.0",
+    "prompt_version": "invariant-compiler-v1",
+    "prompt_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+    "response_schema_sha256": "cd89531eb46ad9007a8cfd91c3b9daad7c0b3a5fba255988e369c605f0d52cad",
+    "scenario_sha256": "71f11d89da840e6b95e5c572e66c669394348b102c89c4979fc8eb904b813483",
+    "example_set_version": "invariants-seed-v1",
+    "example_set_sha256": "dcd7a2e9cb9005cc95a25074da15ee64726ac77ff2762787dcde5617e53e983f",
+    "retrieval": "lexical-jaccard-v1",
+    "retrieved_ids": [
+      "command-forward-limit",
+      "command-duration",
+      "command-speed-magnitude"
+    ],
+    "backend": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "adapter_version": "1.0",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "structured_output": "json_schema",
+      "strict": true,
+      "max_completion_tokens": 4096,
+      "timeout_seconds": 20.0,
+      "stream": false,
+      "sampling_parameters": "provider defaults",
+      "transport": "openai-0.28-compatible-sdk",
+      "reasoning_effort": "provider default"
+    },
+    "max_repairs": 2
+  }
+}

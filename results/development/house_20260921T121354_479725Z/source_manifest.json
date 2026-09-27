@@ -1,0 +1,33 @@
+{
+  "note": "Source and configuration at the start of the heading-and-pacing retest",
+  "sha256": {
+    "src/guardrailgen/guardrailgen/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/guardrailgen/guardrailgen/__main__.py": "e20728c8876029bc855fb76a2ad45b0661ce9096a272f20b9528ce9b9fb4ba7d",
+    "src/guardrailgen/guardrailgen/artifacts.py": "c29617a2003983d7a38e3100a9fd2d92e65622f825e1f10c72c80bb3c191c127",
+    "src/guardrailgen/guardrailgen/monitor_node.py": "2447b78fdb3f900c125d28ac3c113d4c7ae5d462df9bc1aad747afe123f4413e",
+    "src/guardrailgen/guardrailgen/monitors.py": "61ae88d7e3fcc6939203d9af50b4b0aff2ea166bfeab558598cb839ca0224d4a",
+    "src/guardrailgen/guardrailgen/reachability.py": "0ce4808e952079b099840e51e009f085034768b664bc942a94e23be37971138a",
+    "src/guardrailgen/guardrailgen/api/__init__.py": "a603553353cef8ec3d284e8cee433dfd6ccbb6f44edaa2cbbeec7b377abd5d3c",
+    "src/guardrailgen/guardrailgen/api/cli.py": "17db56f1b5c2075bd324402c2d5f72608ac8212abffdcb72409da4db6e1b2f3e",
+    "src/guardrailgen/guardrailgen/compiler/__init__.py": "2c8cdc3c461139afe0ff8c4a6bf9e12ada570cb7329161adb1548ce9ae17c325",
+    "src/guardrailgen/guardrailgen/compiler/backend.py": "82513453e23679aeca9739c037456c3536782c8b95f0595d1e5ec3556c0263fe",
+    "src/guardrailgen/guardrailgen/compiler/core.py": "b0da8c38d79620f0c3da17c704472cd46cf7ee4a19d7bd24e95f9546efabb67d",
+    "src/guardrailgen/guardrailgen/compiler/examples.py": "4d2aa5136c0527c39ac02cd52a23c0e5871f99cdb59e44f0ba4710ae7922e3f7",
+    "src/guardrailgen/guardrailgen/runtime/__init__.py": "ba48e5cdb6aa078db383e2e9467826075858ad1c6ded767c0adbc1271d52bbba",
+    "src/guardrailgen/guardrailgen/runtime/gate.py": "f1f7444cafd0fbe72d54315e6f0c60c89d33749e926af2d832ea5dd18964628c",
+    "src/guardrailgen/guardrailgen/schema/__init__.py": "6bfc52d91765b749af8380596fd06c49077804f8a200123b374f3ce41e4b08ae",
+    "src/guardrailgen/guardrailgen/simulation/__init__.py": "cd2883b5b26c4433bb574315c3fa15ebdcef55426d0ddcb9c6df49f1e96fef5e",
+    "src/guardrailgen/guardrailgen/simulation/controller.py": "f23a35207547e08c67568af64ee2cb04f197115ba2924d2a5e9c8b355005fd61",
+    "src/guardrailgen/guardrailgen/simulation/episode.py": "c496ad4c3468282991fe15784ee30a9d7719a5fd214d3be8177a9cc97bf8fde5",
+    "src/guardrailgen/guardrailgen/simulation/groq_compat.py": "18c6bd60dad039e387cb98d57d6c554026543d7827fd71986d5d11687c03043a",
+    "src/guardrailgen/guardrailgen/simulation/plans.py": "d4e6c5f9b350de912e69294bfe924398e244bd99d187281fd83651282db962cf",
+    "src/guardrailgen/guardrailgen/simulation/reference.py": "4d4b2823b7b5ed5a56cd018a642dd36f90a620bb6a2021fa11bf9c83950cfa55",
+    "src/guardrailgen/guardrailgen/simulation/safellmra.py": "e3dc9363172dc714ff2613a3bbc0b924ab2014d26bb13f1b2e8e58b3cc6b929b",
+    "src/guardrailgen/guardrailgen/simulation/stack.py": "ae85e87e8a869e2b536abe8f6d44ba79823c6d4469a6b2101c47f277baecb1bf",
+    "src/guardrailgen/guardrailgen/validation/__init__.py": "673edac252a5a1f86245c7c698f7a650d0080b1ea6f2bdce8f9acd4fdfb5ee84",
+    "config/house_experiment.json": "f8a2db685576f13375f39bf56a70ba6b56aabbbc8436189fc5add0705601bd4a",
+    "config/turtlebot_development.json": "0817242a2e7451cc85ff580a4f3547da65af0d244576b7ff1c8ce1def88c9879",
+    "config/turtlebot_house.json": "e08b0aee1a1b9f0476463af2581ba8d76472e288462c4553d3a35c1d96b1b190",
+    "config/upstream.json": "5e7598dfad6d52eccb9c226651a54e2c43b3aec5ca88b94f65e8f18ac8f1cbbb"
+  }
+}

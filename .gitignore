@@ -1,0 +1,28 @@
+# ROS2 / colcon
+build/
+install/
+log/
+# python
+__pycache__/
+*.pyc
+.venv/
+# editors
+.vscode/
+.idea/
+
+# secrets
+.env
+.env.*
+!.env.example
+.pytest_cache/
+*.egg-info/
+artifacts/
+external/SafeLLMRA/
+dist/
+generated/
+runs/
+# AI-assistant session notes and local settings (not part of the thesis artifact)
+CLAUDE.md
+AGENTS.md
+CONTINUE_WORK.md
+.claude/

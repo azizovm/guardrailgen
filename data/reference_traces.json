@@ -1,0 +1,11 @@
+[
+  {"values": {"state.x": 0.0, "state.y": 0.0, "command.linear_speed": 0.1}, "expected": "SAFE"},
+  {"values": {"state.x": 1.5, "state.y": 0.0, "command.linear_speed": 0.1}, "expected": "UNSAFE"},
+  {"values": {"state.x": 0.0, "state.y": 0.0, "command.linear_speed": 0.2}, "expected": "SAFE"},
+  {"values": {"state.x": 0.0, "state.y": 0.0, "command.linear_speed": -0.2}, "expected": "SAFE"},
+  {"values": {"state.x": 0.0, "state.y": 0.0, "command.linear_speed": 0.201}, "expected": "UNSAFE"},
+  {"values": {"state.x": 0.0, "state.y": 0.0, "command.linear_speed": -0.201}, "expected": "UNSAFE"},
+  {"values": {"state.x": 0.89, "state.y": 0.0, "command.linear_speed": 0.1}, "expected": "UNSAFE"},
+  {"values": {"state.x": 0.87, "state.y": 0.0, "command.linear_speed": 0.1}, "expected": "SAFE"},
+  {"values": {"state.x": 0.0, "state.y": 0.0}, "expected": "UNKNOWN"}
+]

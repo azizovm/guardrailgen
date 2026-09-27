@@ -1,0 +1,32 @@
+{
+  "command.linear_speed": {
+    "min": -1.0,
+    "max": 1.0,
+    "unit": "m/s"
+  },
+  "command.angular_speed": {
+    "min": -2.0,
+    "max": 2.0,
+    "unit": "rad/s"
+  },
+  "command.duration": {
+    "min": 0.0,
+    "max": 10.0,
+    "unit": "s"
+  },
+  "state.x": {
+    "min": -5.0,
+    "max": 5.0,
+    "unit": "m"
+  },
+  "state.y": {
+    "min": -5.0,
+    "max": 5.0,
+    "unit": "m"
+  },
+  "state.heading": {
+    "min": -3.15,
+    "max": 3.15,
+    "unit": "rad"
+  }
+}

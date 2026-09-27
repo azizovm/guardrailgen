@@ -1,0 +1,44 @@
+{
+  "global_extrapolation": {
+    "stationary_turn_check": [
+      false,
+      1,
+      "operator_rule_safellmra_UNKNOWN"
+    ],
+    "predicted_last_center": [
+      -0.5590721021129903,
+      -1.4562596200668003,
+      0.7174898750109826,
+      -0.5467765538947925
+    ],
+    "predicted_center_translation_m": 0.17369792596174166,
+    "final_radius": [
+      0.053042568430903735,
+      0.04859531439449144,
+      0.033214498551108355,
+      0.03829629853925773
+    ],
+    "formal_guarantee": false
+  },
+  "body_frame": {
+    "stationary_turn_check": [
+      true,
+      null,
+      "safellmra_experimental_checks_passed"
+    ],
+    "predicted_last_center": [
+      -0.4794155875649971,
+      -1.286833830711203,
+      0.8207422569617454,
+      -0.5895810589184693
+    ],
+    "predicted_center_translation_m": 0.014350385816100744,
+    "final_radius": [
+      0.0635582788263272,
+      0.0626990238844959,
+      0.050469420121606164,
+      0.04981133524229193
+    ],
+    "formal_guarantee": false
+  }
+}

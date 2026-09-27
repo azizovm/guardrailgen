@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "name": "SafeLLMRA",
+  "repository": "https://github.com/TUM-CPS-HN/SafeLLMRA.git",
+  "revision": "9e9eee5431ee08830f6524d6b09d2014bc3e343b",
+  "verified_on": "2026-09-19",
+  "verification": "git ls-remote HEAD, GitHub recursive tree and selected raw source at this revision",
+  "checkout_path": "external/SafeLLMRA",
+  "sparse_paths": ["Turtlebot"],
+  "integration_status": "source_audited_not_reproduced",
+  "ros_distribution": "humble",
+  "ubuntu_release": "22.04",
+  "python_package": "Turtlebot/pyzonotope",
+  "predictor_module": "pyzonotope.NLReachability",
+  "predictor_class": "NLReachability",
+  "predictor_method": "run_reachability",
+  "data_directory": "Turtlebot/pyzonotope/example",
+  "data_files": {
+    "U_full_TB.mat": "U_full",
+    "X_0T_TB.mat": "X_0T",
+    "X_1T_TB.mat": "X_1T"
+  },
+  "state_order": ["state.x", "state.y", "cos(state.heading)", "sin(state.heading)"],
+  "input_order": ["command.linear_speed", "command.angular_speed"],
+  "step_seconds": 0.1,
+  "includes_initial_set": true,
+  "topics": {
+    "proposed_plan": {"name": "/parsed_plan", "type": "std_msgs/msg/Float64MultiArray"},
+    "executed_command": {"name": "/cmd_vel", "type": "geometry_msgs/msg/Twist"},
+    "odometry": {"name": "/odom", "type": "nav_msgs/msg/Odometry"},
+    "scan": {"name": "/scan", "type": "sensor_msgs/msg/LaserScan"}
+  },
+  "formal_enforcement_verified": false
+}

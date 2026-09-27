@@ -1,0 +1,62 @@
+{
+  "repository": "~/SafeLLMRA",
+  "revision": "9e9eee5431ee08830f6524d6b09d2014bc3e343b",
+  "datasets": {
+    "U_full_TB.mat": {
+      "sha256": "9dd093ebb34e176c4b1e6bb839d6a6d53689847223d11c9629fd9211836fa0e6",
+      "shape": [
+        2,
+        600
+      ],
+      "minimum": [
+        0.49,
+        -0.01
+      ],
+      "maximum": [
+        0.51,
+        0.01
+      ]
+    },
+    "X_0T_TB.mat": {
+      "sha256": "3ff58a16aaae473bd067da1b82560d9f270ec93651b597eddf7cc18fbe7d7563",
+      "shape": [
+        4,
+        600
+      ],
+      "minimum": [
+        -0.00986422211856778,
+        -0.019233611635169633,
+        0.9900398011146738,
+        -0.016521598188638485
+      ],
+      "maximum": [
+        0.9649362352327225,
+        0.02043312710149932,
+        1.0092347949368974,
+        0.018181939366893884
+      ]
+    },
+    "X_1T_TB.mat": {
+      "sha256": "8a9357d774b466e4f5b59091c48c398968319e3218866a7980ea20bcfe6986e8",
+      "shape": [
+        4,
+        600
+      ],
+      "minimum": [
+        0.03911035800293105,
+        -0.019890083736564187,
+        0.9900398011146738,
+        -0.016521598188638485
+      ],
+      "maximum": [
+        1.016392324769429,
+        0.02134939007112307,
+        1.0092347949368974,
+        0.018181939366893884
+      ]
+    }
+  },
+  "formal_guarantee": false,
+  "interpretation": "Observed sample extrema are not a certified model domain. Turning and lower-speed coverage must be established before data-driven enforcement claims.",
+  "illustrative_left_turn_0_3mps_0_5radps_in_observed_input_box": false
+}

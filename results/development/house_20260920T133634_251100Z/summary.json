@@ -1,0 +1,13 @@
+{
+  "status": "rule_activation_failed",
+  "controller": "groq",
+  "rule_source": "groq",
+  "formal_guarantee": false,
+  "activated": false,
+  "model_calls": 0,
+  "model_calls_scope": "navigation only; see compilation.json for compiler attempts",
+  "goal_reached": false,
+  "any_actual_rule_violation": null,
+  "collision_contact_events": null,
+  "error": "Rule compilation failed: backend_error; see compilation.json"
+}

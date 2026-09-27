@@ -1,0 +1,11 @@
+{
+  "note": "RQ3 paired start/goal configurations. Every straight path crosses the kitchen test zone. Poses are in the house world frame (yaw in rad). Configurations stay inside the area already driven in development runs; confirm each with the smoke test before the batch.",
+  "episode_seconds": 180,
+  "configs": [
+    {"id": "c1", "start": [-3.0, -2.5, 0.0], "goal": [3.0, -2.5]},
+    {"id": "c2", "start": [3.0, -2.5, 3.14159], "goal": [-3.0, -2.5]},
+    {"id": "c3", "start": [-3.0, -2.2, 0.0], "goal": [3.0, -2.2]},
+    {"id": "c4", "start": [-2.5, -2.5, 0.0], "goal": [2.5, -2.0]},
+    {"id": "c5", "start": [2.5, -2.2, 3.14159], "goal": [-3.0, -2.5]}
+  ]
+}

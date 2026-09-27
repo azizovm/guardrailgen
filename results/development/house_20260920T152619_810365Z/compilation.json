@@ -1,0 +1,84 @@
+{
+  "status": "backend_error",
+  "message": "Hosted generation returned HTTP 429",
+  "artifact": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "metadata": {
+        "response_id": "chatcmpl-b8de0884-2dd5-46f6-b919-09db5c43e943",
+        "model": "openai/gpt-oss-120b",
+        "usage": {
+          "queue_time": 0.220397653,
+          "prompt_tokens": 3950,
+          "prompt_time": 0.198354798,
+          "completion_tokens": 356,
+          "completion_time": 0.743342421,
+          "total_tokens": 4306,
+          "total_time": 0.941697219,
+          "completion_tokens_details": {
+            "reasoning_tokens": 294
+          }
+        },
+        "system_fingerprint": "fp_93703442d9",
+        "finish_reason": "stop"
+      },
+      "request_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+      "candidate": {
+        "status": "compiled",
+        "message": "",
+        "rule": {
+          "schema_version": "1.0",
+          "id": "never-enter-kitchen",
+          "text": "Never enter the kitchen.",
+          "expression": {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          }
+        }
+      },
+      "errors": [
+        "Candidate message must explain the interpretation or failure"
+      ],
+      "status": "validation_failed"
+    },
+    {
+      "attempt": 2,
+      "status": "backend_error",
+      "errors": [
+        "Hosted generation returned HTTP 429"
+      ]
+    }
+  ],
+  "provenance": {
+    "compiler_version": "1.0",
+    "prompt_version": "invariant-compiler-v1",
+    "prompt_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+    "response_schema_sha256": "cd89531eb46ad9007a8cfd91c3b9daad7c0b3a5fba255988e369c605f0d52cad",
+    "scenario_sha256": "71f11d89da840e6b95e5c572e66c669394348b102c89c4979fc8eb904b813483",
+    "example_set_version": "invariants-seed-v1",
+    "example_set_sha256": "dcd7a2e9cb9005cc95a25074da15ee64726ac77ff2762787dcde5617e53e983f",
+    "retrieval": "lexical-jaccard-v1",
+    "retrieved_ids": [
+      "command-forward-limit",
+      "command-duration",
+      "command-speed-magnitude"
+    ],
+    "backend": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "adapter_version": "1.0",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "structured_output": "json_schema",
+      "strict": true,
+      "max_completion_tokens": 4096,
+      "timeout_seconds": 30.0,
+      "stream": false,
+      "sampling_parameters": "provider defaults"
+    },
+    "max_repairs": 2
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "episode_version": 1,
+  "status": "active_development",
+  "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/compilation_20260921T115541_689049Z/rules/2af79584679b952d7855e17895770c498e3dc8b4c5c27604334ea5a51621e378.json",
+  "stl": "(not (region_kitchen >= 0))",
+  "activated_at": 21009.9,
+  "pose": [
+    -2.999939640099014,
+    -2.4999997044683653,
+    6.834859804199596e-05
+  ],
+  "measured_velocity": [
+    2.9924441130570667e-05,
+    -1.570466722002861e-05
+  ],
+  "formal_guarantee": false,
+  "backup": "uncertified_nominal_braking_suffix"
+}

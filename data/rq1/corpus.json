@@ -1,0 +1,1121 @@
+{
+  "corpus_version": "rq1-v1",
+  "scenario": "data/rq1/scenario.json",
+  "domains": "data/rq1/domains.json",
+  "retrieval_library": "data/rq1/retrieval_library.json",
+  "note": "Reference expressions are hand-authored by the thesis author, independently of any model output. Expressions describe SAFE behavior. Refusal rules have no reference; expected_refusal is unsupported, clarification, or either.",
+  "rules": [
+    {
+      "id": "f01-kitchen-keepout-a",
+      "family": "f01-kitchen-keepout",
+      "category": "spatial",
+      "text": "Never enter the kitchen.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "kitchen"
+        }
+      }
+    },
+    {
+      "id": "f01-kitchen-keepout-b",
+      "family": "f01-kitchen-keepout",
+      "category": "spatial",
+      "text": "The robot must stay out of the kitchen at all times.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "kitchen"
+        }
+      }
+    },
+    {
+      "id": "f01-kitchen-keepout-c",
+      "family": "f01-kitchen-keepout",
+      "category": "spatial",
+      "text": "Do not drive into the kitchen area.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "kitchen"
+        }
+      }
+    },
+    {
+      "id": "f02-dock-keepout-a",
+      "family": "f02-dock-keepout",
+      "category": "spatial",
+      "text": "Do not touch or enter the charging dock.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "charging_dock"
+        }
+      }
+    },
+    {
+      "id": "f02-dock-keepout-b",
+      "family": "f02-dock-keepout",
+      "category": "spatial",
+      "text": "The charging dock is off-limits to the robot.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "not",
+        "arg": {
+          "op": "inside",
+          "region": "charging_dock"
+        }
+      }
+    },
+    {
+      "id": "f03-two-keepouts-a",
+      "family": "f03-two-keepouts",
+      "category": "spatial",
+      "text": "Avoid both the kitchen and the loading area.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "loading_area"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "f03-two-keepouts-b",
+      "family": "f03-two-keepouts",
+      "category": "spatial",
+      "text": "Neither the kitchen nor the loading area may be entered.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "loading_area"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-speed-mag-0-3-a",
+      "family": "f04-speed-mag-0-3",
+      "category": "global_limit",
+      "text": "Never command a linear speed above 0.3 m/s in either direction.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.3,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": -0.3,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-speed-mag-0-3-b",
+      "family": "f04-speed-mag-0-3",
+      "category": "global_limit",
+      "text": "The absolute value of the commanded linear velocity must not exceed 0.3 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.3,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": -0.3,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-speed-mag-0-3-c",
+      "family": "f04-speed-mag-0-3",
+      "category": "global_limit",
+      "text": "Commanded forward and backward speeds must both stay at or below 0.3 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.3,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": -0.3,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f05-forward-strict-0-25-a",
+      "family": "f05-forward-strict-0-25",
+      "category": "global_limit",
+      "text": "The commanded linear velocity must be strictly less than 0.25 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.linear_speed",
+        "comparator": "lt",
+        "value": 0.25,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "f05-forward-strict-0-25-b",
+      "family": "f05-forward-strict-0-25",
+      "category": "global_limit",
+      "text": "Always command a signed linear velocity below 0.25 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.linear_speed",
+        "comparator": "lt",
+        "value": 0.25,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "f06-turn-mag-0-4-a",
+      "family": "f06-turn-mag-0-4",
+      "category": "global_limit",
+      "text": "Keep the commanded turning rate within plus or minus 0.4 rad/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "le",
+            "value": 0.4,
+            "unit": "rad/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "ge",
+            "value": -0.4,
+            "unit": "rad/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-turn-mag-0-4-b",
+      "family": "f06-turn-mag-0-4",
+      "category": "global_limit",
+      "text": "Never command an angular velocity whose magnitude exceeds 0.4 rad/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "le",
+            "value": 0.4,
+            "unit": "rad/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.angular_speed",
+            "comparator": "ge",
+            "value": -0.4,
+            "unit": "rad/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f07-no-reverse-a",
+      "family": "f07-no-reverse",
+      "category": "global_limit",
+      "text": "Never command the robot to drive backwards.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.linear_speed",
+        "comparator": "ge",
+        "value": 0.0,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "f07-no-reverse-b",
+      "family": "f07-no-reverse",
+      "category": "global_limit",
+      "text": "The commanded linear velocity must never be negative.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.linear_speed",
+        "comparator": "ge",
+        "value": 0.0,
+        "unit": "m/s"
+      }
+    },
+    {
+      "id": "f08-duration-1-a",
+      "family": "f08-duration-1",
+      "category": "global_limit",
+      "text": "No single commanded action may last longer than 1 second.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.duration",
+        "comparator": "le",
+        "value": 1.0,
+        "unit": "s"
+      }
+    },
+    {
+      "id": "f08-duration-1-b",
+      "family": "f08-duration-1",
+      "category": "global_limit",
+      "text": "Each proposed command must have a duration of at most 1.0 s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "compare",
+        "variable": "command.duration",
+        "comparator": "le",
+        "value": 1.0,
+        "unit": "s"
+      }
+    },
+    {
+      "id": "f09-units-cm-a",
+      "family": "f09-units-cm",
+      "category": "global_limit",
+      "text": "Keep the commanded linear speed under 18 cm/s in either direction.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "lt",
+            "value": 0.18,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "gt",
+            "value": -0.18,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f09-units-cm-b",
+      "family": "f09-units-cm",
+      "category": "global_limit",
+      "text": "The magnitude of the commanded speed must stay below 180 mm/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "lt",
+            "value": 0.18,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "gt",
+            "value": -0.18,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f10-school-speed-a",
+      "family": "f10-school-speed",
+      "category": "region_limit",
+      "text": "In the school zone, keep the commanded linear speed at or below 0.1 m/s in both directions.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "school_zone"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "le",
+                "value": 0.1,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "ge",
+                "value": -0.1,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f10-school-speed-b",
+      "family": "f10-school-speed",
+      "category": "region_limit",
+      "text": "Whenever the robot is in the school zone, the magnitude of its commanded speed may not exceed 0.1 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "school_zone"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "le",
+                "value": 0.1,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "ge",
+                "value": -0.1,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f11-corridor-turn-a",
+      "family": "f11-corridor-turn",
+      "category": "region_limit",
+      "text": "While in the corridor, the commanded angular speed must stay between -0.2 and 0.2 rad/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "corridor"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "le",
+                "value": 0.2,
+                "unit": "rad/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "ge",
+                "value": -0.2,
+                "unit": "rad/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f11-corridor-turn-b",
+      "family": "f11-corridor-turn",
+      "category": "region_limit",
+      "text": "Inside the corridor, do not command turning faster than 0.2 rad/s in either direction.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "corridor"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "le",
+                "value": 0.2,
+                "unit": "rad/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "ge",
+                "value": -0.2,
+                "unit": "rad/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f12-corridor-no-reverse-a",
+      "family": "f12-corridor-no-reverse",
+      "category": "region_limit",
+      "text": "Never command reverse motion while in the corridor.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "corridor"
+            }
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f12-corridor-no-reverse-b",
+      "family": "f12-corridor-no-reverse",
+      "category": "region_limit",
+      "text": "In the corridor, the commanded linear velocity must not be negative.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "corridor"
+            }
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f13-kitchen-speed-a",
+      "family": "f13-kitchen-speed",
+      "category": "region_limit",
+      "text": "In the kitchen, only command linear speeds strictly below 0.15 m/s in magnitude.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "lt",
+                "value": 0.15,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "gt",
+                "value": -0.15,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f13-kitchen-speed-b",
+      "family": "f13-kitchen-speed",
+      "category": "region_limit",
+      "text": "While the robot is in the kitchen, its commanded speed must be less than 0.15 m/s forwards and backwards.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "or",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "kitchen"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "lt",
+                "value": 0.15,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "gt",
+                "value": -0.15,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f14-loading-and-speed-a",
+      "family": "f14-loading-and-speed",
+      "category": "compound",
+      "text": "Stay out of the loading area and never command more than 0.25 m/s in either direction.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "loading_area"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "le",
+                "value": 0.25,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "ge",
+                "value": -0.25,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f14-loading-and-speed-b",
+      "family": "f14-loading-and-speed",
+      "category": "compound",
+      "text": "Do not enter the loading area, and keep the commanded linear speed magnitude at or below 0.25 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "loading_area"
+            }
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "le",
+                "value": 0.25,
+                "unit": "m/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.linear_speed",
+                "comparator": "ge",
+                "value": -0.25,
+                "unit": "m/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f15-dock-and-school-a",
+      "family": "f15-dock-and-school",
+      "category": "compound",
+      "text": "Avoid the charging dock, and in the school zone keep the commanded speed magnitude at or below 0.1 m/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "charging_dock"
+            }
+          },
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "not",
+                "arg": {
+                  "op": "inside",
+                  "region": "school_zone"
+                }
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "compare",
+                    "variable": "command.linear_speed",
+                    "comparator": "le",
+                    "value": 0.1,
+                    "unit": "m/s"
+                  },
+                  {
+                    "op": "compare",
+                    "variable": "command.linear_speed",
+                    "comparator": "ge",
+                    "value": -0.1,
+                    "unit": "m/s"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f15-dock-and-school-b",
+      "family": "f15-dock-and-school",
+      "category": "compound",
+      "text": "Never enter the charging dock; inside the school zone, never command more than 0.1 m/s in either direction.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "arg": {
+              "op": "inside",
+              "region": "charging_dock"
+            }
+          },
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "not",
+                "arg": {
+                  "op": "inside",
+                  "region": "school_zone"
+                }
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "op": "compare",
+                    "variable": "command.linear_speed",
+                    "comparator": "le",
+                    "value": 0.1,
+                    "unit": "m/s"
+                  },
+                  {
+                    "op": "compare",
+                    "variable": "command.linear_speed",
+                    "comparator": "ge",
+                    "value": -0.1,
+                    "unit": "m/s"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f16-speed-and-turn-window-a",
+      "family": "f16-speed-and-turn-window",
+      "category": "compound",
+      "text": "The commanded linear speed must be between 0 and 0.3 m/s, and the commanded angular speed between -0.5 and 0.5 rad/s.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.3,
+            "unit": "m/s"
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "le",
+                "value": 0.5,
+                "unit": "rad/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "ge",
+                "value": -0.5,
+                "unit": "rad/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f16-speed-and-turn-window-b",
+      "family": "f16-speed-and-turn-window",
+      "category": "compound",
+      "text": "Only command forward speeds up to 0.3 m/s (no reverse) and turning rates of at most 0.5 rad/s in magnitude.",
+      "expected": "compiled",
+      "expected_refusal": null,
+      "reference": {
+        "op": "and",
+        "args": [
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "ge",
+            "value": 0.0,
+            "unit": "m/s"
+          },
+          {
+            "op": "compare",
+            "variable": "command.linear_speed",
+            "comparator": "le",
+            "value": 0.3,
+            "unit": "m/s"
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "le",
+                "value": 0.5,
+                "unit": "rad/s"
+              },
+              {
+                "op": "compare",
+                "variable": "command.angular_speed",
+                "comparator": "ge",
+                "value": -0.5,
+                "unit": "rad/s"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "f17-dwell-a",
+      "family": "f17-dwell",
+      "category": "unsupported",
+      "text": "After entering the corridor, remain inside it for at least 2 seconds.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f17-dwell-b",
+      "family": "f17-dwell",
+      "category": "unsupported",
+      "text": "Once the robot is in the loading area, it must stay there for 5 seconds.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f18-eventually-a",
+      "family": "f18-eventually",
+      "category": "unsupported",
+      "text": "Reach the charging dock within 60 seconds.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f18-eventually-b",
+      "family": "f18-eventually",
+      "category": "unsupported",
+      "text": "Eventually return to the charging dock.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f19-measured-speed-a",
+      "family": "f19-measured-speed",
+      "category": "unsupported",
+      "text": "The robot's actual measured speed must never exceed 0.2 m/s.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f19-measured-speed-b",
+      "family": "f19-measured-speed",
+      "category": "unsupported",
+      "text": "Keep the real velocity, as measured by odometry, below 0.2 m/s.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f20-unknown-sensor-a",
+      "family": "f20-unknown-sensor",
+      "category": "unsupported",
+      "text": "Stop whenever a person is detected closer than 1 m.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f20-unknown-sensor-b",
+      "family": "f20-unknown-sensor",
+      "category": "unsupported",
+      "text": "Never drive when the battery level is below 20 percent.",
+      "expected": "refusal",
+      "expected_refusal": "unsupported",
+      "reference": null
+    },
+    {
+      "id": "f21-unknown-region-a",
+      "family": "f21-unknown-region",
+      "category": "unsupported",
+      "text": "Never enter the garage.",
+      "expected": "refusal",
+      "expected_refusal": "either",
+      "reference": null
+    },
+    {
+      "id": "f21-unknown-region-b",
+      "family": "f21-unknown-region",
+      "category": "unsupported",
+      "text": "Stay out of the bedroom.",
+      "expected": "refusal",
+      "expected_refusal": "either",
+      "reference": null
+    },
+    {
+      "id": "f22-no-threshold-a",
+      "family": "f22-no-threshold",
+      "category": "ambiguous",
+      "text": "Drive slowly in the school zone.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    },
+    {
+      "id": "f22-no-threshold-b",
+      "family": "f22-no-threshold",
+      "category": "ambiguous",
+      "text": "Don't go too fast in the kitchen.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    },
+    {
+      "id": "f23-no-unit-a",
+      "family": "f23-no-unit",
+      "category": "ambiguous",
+      "text": "Keep the commanded linear speed below 5.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    },
+    {
+      "id": "f23-no-unit-b",
+      "family": "f23-no-unit",
+      "category": "ambiguous",
+      "text": "The commanded turning rate must not exceed 30.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    },
+    {
+      "id": "f24-vague-distance-a",
+      "family": "f24-vague-distance",
+      "category": "ambiguous",
+      "text": "Keep a safe distance from the loading area.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    },
+    {
+      "id": "f24-vague-distance-b",
+      "family": "f24-vague-distance",
+      "category": "ambiguous",
+      "text": "Do not get too close to the charging dock.",
+      "expected": "refusal",
+      "expected_refusal": "clarification",
+      "reference": null
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "rule": {
+    "schema_version": "1.0",
+    "id": "kitchen-speed-limit",
+    "text": "In the kitchen, keep the commanded linear speed at or below 0.1 m/s in both directions.",
+    "expression": {
+      "op": "or",
+      "args": [
+        {
+          "op": "not",
+          "arg": {
+            "op": "inside",
+            "region": "kitchen"
+          }
+        },
+        {
+          "op": "and",
+          "args": [
+            {
+              "op": "compare",
+              "variable": "command.linear_speed",
+              "comparator": "le",
+              "value": 0.1,
+              "unit": "m/s"
+            },
+            {
+              "op": "compare",
+              "variable": "command.linear_speed",
+              "comparator": "ge",
+              "value": -0.1,
+              "unit": "m/s"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scenario": {
+    "schema_version": "1.0",
+    "frame": "odom",
+    "footprint_radius": 0.25,
+    "regions": {
+      "kitchen": {
+        "kind": "rectangle",
+        "xmin": -0.8,
+        "xmax": 0.8,
+        "ymin": -3.4,
+        "ymax": -1.6
+      }
+    },
+    "supported_variables": [
+      "state.x",
+      "state.y",
+      "state.heading",
+      "command.linear_speed",
+      "command.angular_speed",
+      "command.duration"
+    ]
+  },
+  "stl": "((not (region_kitchen >= 0)) or ((command_linear_speed <= 0.1) and (command_linear_speed >= -0.1)))",
+  "validation": {
+    "structure": "passed",
+    "grounding": "passed",
+    "lowering": "passed",
+    "consistency": "direct_conjuncts_checked_only",
+    "rtamt": {
+      "status": "passed",
+      "version": "0.3.5",
+      "scope": "instantaneous predicate syntax; enforce at every step"
+    },
+    "trace_validation": {
+      "cases": [
+        {
+          "index": 0,
+          "expected": "SAFE",
+          "actual": "SAFE",
+          "passed": true,
+          "rtamt_robustness": 0.19999999999999996
+        },
+        {
+          "index": 1,
+          "expected": "UNSAFE",
+          "actual": "UNSAFE",
+          "passed": true,
+          "rtamt_robustness": -0.19999999999999998
+        },
+        {
+          "index": 2,
+          "expected": "SAFE",
+          "actual": "SAFE",
+          "passed": true,
+          "rtamt_robustness": 0.0
+        },
+        {
+          "index": 3,
+          "expected": "UNSAFE",
+          "actual": "UNSAFE",
+          "passed": true,
+          "rtamt_robustness": -0.1
+        },
+        {
+          "index": 4,
+          "expected": "UNSAFE",
+          "actual": "UNSAFE",
+          "passed": true,
+          "rtamt_robustness": -0.009999999999999995
+        }
+      ],
+      "passed": true,
+      "scope": "finite supplied reference cases; not a proof"
+    },
+    "english_semantics_verified": false,
+    "equivalence": "not_checked",
+    "errors": []
+  },
+  "provenance": {
+    "source": "hand_authored_smoke_reference_no_language_model"
+  },
+  "activation": "requires_explicit_runtime_loading",
+  "artifact_sha256": "d6f9928bd842504c15e6204d823a6a35333f74b1edd797616dcb1a286c713a10"
+}

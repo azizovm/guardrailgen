@@ -1,0 +1,1 @@
+{"config": "no_retrieval", "model": "openai/gpt-oss-120b", "provider": "openrouter", "dry_run": false, "calls_used_this_invocation": 50, "rate_limited_rejections": 10, "tokens_this_invocation": 225785, "elapsed_s": 479.1, "corpus_version": "rq1-v1", "library_version": "rq1-library-v1"}

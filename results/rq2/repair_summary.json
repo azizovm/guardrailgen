@@ -1,0 +1,12 @@
+{
+  "injected": 40,
+  "repaired_to_reference": 40,
+  "repair_rate": 1.0,
+  "safe_outcome_rate": 1.0,
+  "accepted_but_wrong": 0,
+  "mean_repairs_when_repaired": 1,
+  "by_final_status": {
+    "compiled": 40
+  },
+  "model_calls": 40
+}

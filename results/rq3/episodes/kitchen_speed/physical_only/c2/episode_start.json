@@ -1,0 +1,18 @@
+{
+  "episode_version": 1,
+  "status": "active_development",
+  "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/episodes/kitchen_speed/physical_only/c2/rules/d6f9928bd842504c15e6204d823a6a35333f74b1edd797616dcb1a286c713a10.json",
+  "stl": "((not (region_kitchen >= 0)) or ((command_linear_speed <= 0.1) and (command_linear_speed >= -0.1)))",
+  "activated_at": 1421.4,
+  "pose": [
+    2.9999383593060887,
+    -2.500000111689538,
+    -3.141580207474749
+  ],
+  "measured_velocity": [
+    3.538302196302566e-05,
+    -1.570731422954397e-05
+  ],
+  "formal_guarantee": false,
+  "backup": "uncertified_nominal_braking_suffix"
+}

@@ -1,0 +1,54 @@
+{
+  "kitchen_keepout": {
+    "text": "Never enter the kitchen.",
+    "status": "compiled",
+    "attempts": 1,
+    "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/rules/kitchen_keepout/157d07c6aa64221f642a6d0739d90d41b125b54fabe257f8fc9d95ed59e142b1.json",
+    "expression": {
+      "op": "not",
+      "arg": {
+        "op": "inside",
+        "region": "kitchen"
+      }
+    },
+    "stl": "(not (region_kitchen >= 0))"
+  },
+  "kitchen_speed": {
+    "text": "In the kitchen, keep the commanded linear speed at or below 0.1 m/s in both directions.",
+    "status": "compiled",
+    "attempts": 2,
+    "artifact": "/mnt/c/Users/meziz/OneDrive/Рабочий стол/Thesis/guardrailgen/runs/rq3/rules/kitchen_speed/12af81bb6971ba3d045dba7d92be00268e043e97514531f3df7eddefd4b3a699.json",
+    "expression": {
+      "op": "or",
+      "args": [
+        {
+          "op": "not",
+          "arg": {
+            "op": "inside",
+            "region": "kitchen"
+          }
+        },
+        {
+          "op": "and",
+          "args": [
+            {
+              "op": "compare",
+              "variable": "command.linear_speed",
+              "comparator": "le",
+              "value": 0.1,
+              "unit": "m/s"
+            },
+            {
+              "op": "compare",
+              "variable": "command.linear_speed",
+              "comparator": "ge",
+              "value": -0.1,
+              "unit": "m/s"
+            }
+          ]
+        }
+      ]
+    },
+    "stl": "((not (region_kitchen >= 0)) or ((command_linear_speed <= 0.1) and (command_linear_speed >= -0.1)))"
+  }
+}

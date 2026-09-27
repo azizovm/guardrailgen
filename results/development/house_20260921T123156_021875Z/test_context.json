@@ -1,0 +1,7 @@
+{
+  "kind": "recovery_from_stopped_pose",
+  "predecessor": "house_20260921T122231_492219Z",
+  "reset_world": false,
+  "calls_available": 15,
+  "initial_pose_record": "episode_start.json"
+}

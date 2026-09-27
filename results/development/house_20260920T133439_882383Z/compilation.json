@@ -1,0 +1,42 @@
+{
+  "status": "backend_error",
+  "message": "Hosted generation returned HTTP 403",
+  "artifact": null,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "backend_error",
+      "errors": [
+        "Hosted generation returned HTTP 403"
+      ]
+    }
+  ],
+  "provenance": {
+    "compiler_version": "1.0",
+    "prompt_version": "invariant-compiler-v1",
+    "prompt_sha256": "84f722884b47f38410aba353ce9a6786496bb85dec0f5e267eeb9781d1a2a25f",
+    "response_schema_sha256": "6d12a0ded417230051a54296e844c8754c1af13d9d23814143691cc1bf9df119",
+    "scenario_sha256": "71f11d89da840e6b95e5c572e66c669394348b102c89c4979fc8eb904b813483",
+    "example_set_version": "invariants-seed-v1",
+    "example_set_sha256": "dcd7a2e9cb9005cc95a25074da15ee64726ac77ff2762787dcde5617e53e983f",
+    "retrieval": "lexical-jaccard-v1",
+    "retrieved_ids": [
+      "command-forward-limit",
+      "command-duration",
+      "command-speed-magnitude"
+    ],
+    "backend": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "adapter_version": "1.0",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+      "structured_output": "json_schema",
+      "strict": true,
+      "max_completion_tokens": 4096,
+      "timeout_seconds": 30.0,
+      "stream": false,
+      "sampling_parameters": "provider defaults"
+    },
+    "max_repairs": 2
+  }
+}
